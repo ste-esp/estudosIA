@@ -1,0 +1,81 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+
+    
+.anotacoes{
+        color: rgb(238, 152, 196); /**/
+    background-color: rgb(252, 245, 188); /**/
+    text-align: center; /**/
+    font-size: 25px; /**/
+    width: 300px; /**/
+}
+
+.titulo{
+    color: rgb(189, 245, 252);
+  
+    font-size: 55px;
+
+}
+
+.subtitulo{
+    color: rgb(252, 245, 188);
+   
+    font-size: 25px;
+}
+
+.texto-apresentacao{ 
+    color: rgb(252, 245, 188);
+    font-size: 25px;
+
+
+}
+
+
+.cabecalho{
+    background-color: rgb(238, 152, 196);
+    text-align: center;
+}
+
+
+.menu {
+    text-align: center;
+}
+
+.secao {
+    color: rgb(238, 152, 196);
+    background-color: rgb(252, 245, 188);
+    text-align: center;
+    font-size: 25px;
+}
+
+.card {
+    background-color: rgb(252, 245, 188);
+    width: 300px;
+}
+.card-titulo{
+font-size: 30px;
+color: rgb(190, 106, 150);
+text-align: center;
+}
+
+.card-descricao{
+    font-size: 20px;
+}
+
+.card-preco{
+    color: rgb(190, 106, 150);
+    font-size: 25px;
+    
+}
+
+.card-botao{
+    background-color: rgb(189, 245, 252);
+    color: rgb(190, 106, 150);
+    width: 100px;
+    height: 20px;
+    
+}
+
+}

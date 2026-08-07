@@ -1,0 +1,23 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cause:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Tai+Heritage+Pro:wght@400;700&display=swap');
+
+body{background-color: rgb(250, 212, 218);
+text-align: center;
+
+}
+
+h1{
+    color: rgb(236, 82, 108);
+     
+    background-color: pink;
+    
+}
+
+p{color: rgb(236, 82, 108); background-color: pink;
+
+}
+button{background-color: rgb(236, 82, 108); 
+color: pink;
+
+}
+/* font-family: formato das letras */

@@ -1,0 +1,348 @@
+/* BANNER TURISMO */
+.banner-turismo {
+    background-image: url('https://placehold.co/1920x600/333/fff?text=Banner+Turismo');
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.banner-conteudo {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 800px;
+}
+
+.banner-conteudo h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #f3b9dd;
+}
+
+.banner-conteudo p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+
+/* SEÇÃO DE CARROSSEL GERAL */
+.secao-carrossel {
+    padding: 50px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.secao-carrossel h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #1a1a1a;
+    text-transform: uppercase;
+}
+
+/* ESTRUTURA CSS ONLY CAROUSEL */
+.css-carousel {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Oculta os inputs radio usados para controle */
+.css-carousel input[type="radio"] {
+    display: none;
+}
+
+.carousel-inner {
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Ajuste para o último slide de hotéis que tem menos cards e precisa ficar alinhado à esquerda (ou centro) */
+.slide-esquerda {
+    justify-content: flex-start;
+    padding-left: 20px;
+}
+
+.card-turismo {
+    width: calc(33.333% - 14px); /* 3 cards por vez com gap de 20px */
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.card-turismo img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-turismo h3 {
+    padding: 15px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+
+/* LÓGICA DE MOVIMENTO (ATRATIVOS) */
+#atr-s1:checked ~ .carousel-inner .track-atrativos { transform: translateX(0%); }
+#atr-s2:checked ~ .carousel-inner .track-atrativos { transform: translateX(-100%); }
+#atr-s3:checked ~ .carousel-inner .track-atrativos { transform: translateX(-200%); }
+
+/* LÓGICA DE MOVIMENTO (HOTÉIS) */
+#hot-s1:checked ~ .carousel-inner .track-hoteis { transform: translateX(0%); }
+#hot-s2:checked ~ .carousel-inner .track-hoteis { transform: translateX(-100%); }
+#hot-s3:checked ~ .carousel-inner .track-hoteis { transform: translateX(-200%); }
+#hot-s4:checked ~ .carousel-inner .track-hoteis { transform: translateX(-300%); }
+
+/* LÓGICA DE MOVIMENTO (RESTAURANTES) */
+#res-s1:checked ~ .carousel-inner .track-rest { transform: translateX(0%); }
+
+
+/* SETAS LATERAIS */
+.carousel-arrows {
+    display: none;
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    width: 100%;
+    justify-content: space-between;
+    pointer-events: none; /* Deixa clicar através na div */
+}
+
+.carousel-arrows label {
+    pointer-events: auto; /* Reativa clique nas setas */
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    transition: background-color 0.3s;
+    user-select: none;
+}
+
+.carousel-arrows label:hover {
+    background-color: #1a1a1a;
+}
+
+/* Mostra as setas certas baseado no radio checkado */
+#atr-s1:checked ~ .arrows-atr-1 { display: flex; }
+#atr-s2:checked ~ .arrows-atr-2 { display: flex; }
+#atr-s3:checked ~ .arrows-atr-3 { display: flex; }
+
+#hot-s1:checked ~ .arrows-hot-1 { display: flex; }
+#hot-s2:checked ~ .arrows-hot-2 { display: flex; }
+#hot-s3:checked ~ .arrows-hot-3 { display: flex; }
+#hot-s4:checked ~ .arrows-hot-4 { display: flex; }
+
+
+/* DOTS INFERIORES */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.carousel-dots label {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carousel-dots label:hover {
+    background-color: #999;
+}
+
+/* Estiliza o dot ativo */
+#atr-s1:checked ~ .dots-atr .dot-atr-1,
+#atr-s2:checked ~ .dots-atr .dot-atr-2,
+#atr-s3:checked ~ .dots-atr .dot-atr-3 {
+    background-color: #72a2e9;
+}
+
+#hot-s1:checked ~ .dots-hot .dot-hot-1,
+#hot-s2:checked ~ .dots-hot .dot-hot-2,
+#hot-s3:checked ~ .dots-hot .dot-hot-3,
+#hot-s4:checked ~ .dots-hot .dot-hot-4 {
+    background-color: #72a2e9;
+}
+
+#res-s1:checked ~ .dots-rest .dot-res-1 {
+    background-color: #72a2e9;
+}
+
+
+/* LEGENDA E BOTÃO ABAIXO DO CARROSSEL */
+.legenda-botao {
+    margin-top: 20px;
+}
+
+.legenda-botao p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* DESCONTOS EXCLUSIVOS */
+.secao-descontos-exclusivos {
+    background-color: #f3b9dd;
+    padding: 60px 20px;
+    text-align: center;
+    color: #1a1a1a;
+}
+
+.secao-descontos-exclusivos h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.secao-descontos-exclusivos p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+/* DESCONTOS OUTRAS EMPRESAS */
+.secao-outras-empresas {
+    padding: 50px;
+    text-align: center;
+    background-color: #f5f5f5;
+}
+
+.secao-outras-empresas h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #1a1a1a;
+}
+
+.cards-empresas-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card-empresa {
+    width: 300px;
+    padding: 30px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card-empresa img {
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.card-empresa h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.roxo { background-color: #6a0dad; }
+.laranja { background-color: #ff8c00; }
+.vermelho { background-color: #dc143c; }
+
+/* FAQ */
+.secao-faq {
+    padding: 60px 50px;
+    background-color: #fff;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.secao-faq h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #1a1a1a;
+}
+
+.faq-lista details {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-left: 5px solid #72a2e9;
+    cursor: pointer;
+}
+
+.faq-lista summary {
+    font-size: 1.1rem;
+    font-weight: bold;
+    outline: none;
+    color: #333;
+}
+
+.faq-lista p {
+    margin-top: 10px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* WHATSAPP FLUTUANTE */
+.whatsapp-flutuante {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: transform 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #25D366;
+}
+
+.whatsapp-flutuante img {
+    border-radius: 50%;
+    display: block;
+}
+
+.whatsapp-flutuante:hover {
+    transform: scale(1.1);
+}
+
+.tooltip {
+    position: absolute;
+    right: 70px;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    opacity: 0;
+    white-space: nowrap;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.whatsapp-flutuante:hover .tooltip {
+    opacity: 1;
+}
